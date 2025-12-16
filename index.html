@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enedina Alves Marques - Primeira Engenheira Negra do Brasil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            overflow-x: hidden;
+            color: #f0f0f0;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            scroll-snap-align: start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Slides */
+        .slide-1 {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d5a3d 100%);
+            text-align: center;
+        }
+
+        .slide-2, .slide-5, .slide-8 {
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a3a2a 100%);
+        }
+
+        .slide-3, .slide-6, .slide-9 {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d3d4a 100%);
+        }
+
+        .slide-4, .slide-7, .slide-10 {
+            background: linear-gradient(135deg, #0d0d0d 0%, #2a2a3a 100%);
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #00d084;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #00d084;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: #00d084;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+        }
+
+        .quote {
+            font-size: 1.2rem;
+            color: #ffd700;
+            font-style: italic;
+            border-left: 4px solid #00d084;
+            padding-left: 20px;
+            margin: 30px 0;
+            line-height: 1.8;
+        }
+
+        .metadata {
+            position: absolute;
+            bottom: 30px;
+            right: 60px;
+            font-size: 0.9rem;
+            color: #888;
+            text-align: right;
+        }
+
+        .content {
+            max-width: 1000px;
+            text-align: left;
+        }
+
+        .centered-content {
+            text-align: center;
+            width: 100%;
+        }
+
+        ul {
+            margin-left: 40px;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            width: 100%;
+        }
+
+        .column {
+            background: rgba(0, 208, 132, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #00d084;
+        }
+
+        /* Navigation */
+        .nav-info {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #888;
+            font-size: 0.95rem;
+            z-index: 100;
+        }
+
+        .nav-buttons {
+            position: fixed;
+            bottom: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 60px;
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        button {
+            background: rgba(0, 208, 132, 0.8);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            pointer-events: all;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #00d084;
+        }
+
+        .highlight {
+            background: rgba(0, 208, 132, 0.2);
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .date-year {
+            color: #00d084;
+            font-weight: bold;
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 60px;
+            color: #888;
+            font-size: 1.1rem;
+            z-index: 100;
+        }
+
+        .title-slide h1 {
+            font-size: 4rem;
+        }
+
+        .title-slide .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 50px;
+        }
+
+        .title-slide .author-info {
+            font-size: 1.1rem;
+            color: #888;
+            margin-top: 100px;
+        }
+
+        .author-info strong {
+            color: #00d084;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Capa -->
+    <section class="slide slide-1 title-slide centered-content">
+        <h1>Enedina Alves Marques</h1>
+        <p class="subtitle">Primeira Engenheira Negra do Brasil</p>
+        <p class="subtitle" style="font-size: 1.2rem; color: #999;">Uma história de luta, persistência e determinação</p>
+        <img src="./imgs/Enedina 1x1.png" alt="Foto de Enedina" style="border: #0d0d0d solid 2px;">
+        <div class="author-info">
+            <p><strong>Componentes:</strong> Adaylla Alannis, Giulliana Beatriz, João Maria</p>
+        </div>
+    </section>
+
+    <!-- Slide 2: Tópicos -->
+    <section class="slide slide-2">
+        <div class="centered-content">
+            <h2>Tópicos da Apresentação</h2>
+            <ul style="font-size: 1.4rem; margin-top: 50px; list-style-type: none; margin-left: 0;">
+                <li>Contexto Histórico</li>
+                <li>Influências</li>
+                <li>Trajetória e Contribuições para a Ciência</li>
+                <li>Legado e Importância</li>
+                <li>Referências</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Slide 3: Contexto Histórico (Parte 1) -->
+    <section class="slide slide-3">
+        <div class="content">
+            <h2>Contexto Histórico (1913-1940)</h2>
+            <p><strong>Nascimento e família:</strong></p>
+            <ul>
+                <li><span class="date-year">1913:</span> Enedina nasce em Curitiba, filha de Paulo Marques e Virgília Alves Marques</li>
+                <li>Pais eram pessoas negras, pobres, com traumas herdados da escravidão</li>
+                <li>Mãe trabalhava como lavadeira; depois como empregada doméstica</li>
+                <li>Viviam na periferia de Curitiba, com acesso limitado à educação</li>
+            </ul>
+            
+            <div class="quote" style="margin-top: 40px;">
+                "Por você ser preto você tem de ser duas vezes melhor... Se você tá pelo menos 100 vezes atrasado, pela escravidão, pela história, pelo preconceito, pelos traumas, pelas psicose... Por tudo que aconteceu, duas vezes melhor como?"
+                <br><br>
+                <strong>— Racionais MC</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Contexto Histórico (Parte 2) -->
+    <section class="slide slide-4">
+        <div class="content">
+            <h2>Contexto Histórico: Brasil em Transformação</h2>
+            <p><strong>Conjuntura da época:</strong></p>
+            <ul>
+                <li>Curitiba estava em rápido crescimento urbano nos anos 1930-1940</li>
+                <li>Segunda Guerra Mundial (1939-1945) ocorria simultaneamente</li>
+                <li>Engenharia era profissão destinada apenas a homens brancos de elite</li>
+                <li>Mulheres negras precisavam trabalhar como domésticas</li>
+                <li>Universidade do Paraná era instituição privada e elitista</li>
+            </ul>
+            
+            <div class="highlight">
+                <strong>O desafio:</strong> Uma mulher negra, pobre, neta de escravizados, querendo se formar em engenharia num país ainda marcado pelo preconceito racial e de gênero.
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: Influências (Parte 1) -->
+    <section class="slide slide-5">
+        <div class="content">
+            <h2>Quem Influenciou Enedina?</h2>
+            <p><strong>Família Nascimento:</strong></p>
+            <ul>
+                <li><strong>Delegado Domingos Nascimento Sobrinho</strong> - patrão que pagou sua educação em colégios particulares</li>
+                <li>Sua filha Isabel (Bebeca) foi colega de estudos</li>
+                <li>Permitiu que Enedina estudasse junto com filha de igual idade</li>
+                <li><span class="date-year">1925-1926:</span> Enedina foi alfabetizada na Escola Particular da Professora Luiza</li>
+            </ul>
+            
+            <p style="margin-top: 40px;"><strong>Primeira influência estratégica:</strong> Oportunidade de educação formal desde criança (rarissímo para negros na época)</p>
+        </div>
+    </section>
+
+    <!-- Slide 6: Influências (Parte 2) -->
+    <section class="slide slide-6">
+        <div class="content">
+            <h2>Influências: Família Caron e Perseverança</h2>
+            <p><strong>Família Caron e Mathias Caron:</strong></p>
+            <ul>
+                <li><strong>Construtor Mathias Caron</strong> - novo benfeitor que acolheu Enedina</li>
+                <li>Durante cursos de pré-engenharia, Enedina morou na casa dos Caron</li>
+                <li>Tomou contato com projetos de construção, cálculos e gestão de obras</li>
+                <li>Aprendeu na prática engenharia enquanto estudava</li>
+            </ul>
+
+            <p style="margin-top: 40px;"><strong>Influência própria de Enedina:</strong></p>
+            <ul>
+                <li>Trabalhou como professora por 4 anos (1932-1936)</li>
+                <li>Decidiu sozinha mudar para engenharia vendo Curitiba crescer</li>
+                <li>Determinação em romper com destino de empregada doméstica</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Slide 7: Registro fotográfico -->
+    <section class="slide slide-7">
+        <div class="content">
+            <h2>Registro da formação para ser professora</h2>
+            <p style="margin-top: 40px;"><strong>única mulher negra</strong></p>
+            <img src="./imgs/enedina professora.webp" alt="Foto de Enedina formando no colegial">
+        </div>
+    </section>
+
+    <!-- Slide 8: Contribuições (Parte 1) -->
+    <section class="slide slide-8">
+        <div class="content">
+            <h2>Contribuições para Ciência e Tecnologia (1)</h2>
+            <p><strong>Formação e primeiros passos:</strong></p>
+            <ul>
+                <li><span class="date-year">1938:</span> Cursa pré-engenharia no Ginásio Paranaense (noturno)</li>
+                <li><span class="date-year">1940:</span> Ingressa na Faculdade de Engenharia da Universidade do Paraná</li>
+                <li><span class="date-year">1945:</span> Forma-se como <strong>primeira engenheira negra do Brasil</strong></li>
+                <li>Única mulher entre 32 homens brancos</li>
+                <li>Não havia nem banheiro feminino no prédio</li>
+                <li>Copiava à mão cada página dos livros importados (muito caros)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Slide 9: Contribuições (Parte 2) -->
+    <section class="slide slide-9">
+        <div class="content">
+            <h2>Contribuições para Ciência e Tecnologia (2)</h2>
+            <p><strong>Principais projetos de engenharia:</strong></p>
+            <ul>
+                <li><strong>Usina Capivari-Cachoeira (1947-1950):</strong> Sistema inovador que uniu 3 rios (Capivari, Cachoeira e Itaipu) em único canal com técnica inédita - 15 km de duto pela Serra do Mar</li>
+                <li><strong>Colégio Estadual do Paraná:</strong> Considerado maior do país na época</li>
+                <li><strong>Casa do Estudante Universitário de Curitiba:</strong> Abrigava alunos pobres como ela</li>
+                <li><strong>Chefe de Hidráulica:</strong> Secr. de Viação e Obras Públicas do Paraná</li>
+                <li><strong>Plano Hidrelétrico do Estado:</strong> Aproveitamento das águas do Paraná</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Slide 10: Contribuições(registros) -->
+    <section class="slide slide-10">
+        <div class="content">
+            <h2>Contribuições para Ciência e Tecnologia</h2>
+            <p><strong>Registros dos 3 grandes feitos</strong></p>
+            <figure style="display: inline-block; margin: 20px;">
+                <img src="./imgs/usina capivari.jfif" alt="Usina do Capivari-Cachoeira">
+                <figcaption style="margin-bottom: 20px;">Usina do Capivari-Cachoeira</figcaption>
+                <img src="./imgs/obras da usina.jfif" alt="Obras da Usina">
+                <figcaption  style="margin-bottom: 20px;">Obras da Usina</figcaption>
+            </figure>
+
+             <figure style="display: inline-block; margin: 20px;">
+                <img src="./imgs/colegio estadual do parana.jfif" alt="Colégio Estadual do Paraná">
+                <figcaption style="margin-bottom: 20px;">Colégio Estadual do Paraná</figcaption>
+                <img src="./imgs/casa do estudante.jfif" alt="Casa do Estudante Universitário do Paraná">
+                <figcaption style="margin-bottom: 20px;">Casa do Estudante Universitário do Paraná</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- Slide 11: Legado e Importância -->
+    <section class="slide slide-11">
+        <div class="content">
+            <h2>Legado e Importância Histórica</h2>
+            <ul>
+                <li><strong>Reconhecimento:</strong> Governador Ney Braga concedeu ordenado equivalente ao de juiz (1962)</li>
+                <li><strong>Memória:</strong> Rua em seu nome na Vila Oficinas, Cajuru (1988)</li>
+                <li><strong>Instituto:</strong> Fundado Instituto de Mulheres Negras Enedina Alves Marques em Maringá (2006)</li>
+                <li><strong>Homenagem UFPR:</strong> Placa no Prédio de Tecnologia (2018)</li>
+                <li><strong>Doodle Google:</strong> Brasil homenageou no dia de seu aniversário (2023)</li>
+                <li><strong>Pintura externa(mural):</strong> UFPR faz homenagem para Enedina na área externa do campus</li>
+            </ul>
+
+            <div class="highlight" style="margin-top: 40px; background: rgba(255, 215, 0, 0.1); border-left-color: #ffd700;">
+                <strong>Importância:</strong> Quebrou 2 tabus - primeira mulher a se formar em engenharia no Paraná e primeira negra a ser engenheira em 450 anos de Brasil. Inspiração para meninas e meninos pretos na ciência.
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 12: Legado e Importância(registros) -->
+    <section class="slide slide-12">
+        <div class="content">
+            <h2>Algumas das homenagens da UFPR para Enedina</h2>
+           <figure>
+            <img src="./imgs/mural enedina.jfif" alt="Mural na UFPR">
+            <figcaption  style="margin-bottom: 20px;">Mural na UFPR</figcaption>
+            <img src="./imgs/placa enedina.jfif" alt="Placa no setor de Tecnologia">
+            <figcaption>Placa no setor de Tecnologia</figcaption>
+           </figure>
+        </div>
+    </section>
+
+    <!-- Slide 13: Referências -->
+    <section class="slide slide-13">
+        <div class="content">
+            <h2>Referências Pesquisadas</h2>
+            <ul style="font-size: 1.1rem; line-height: 2.2;">
+                <a href="https://pt.wikipedia.org/wiki/Enedina_Alves_Marques" target="_blank" style="text-decoration: none; color: white;">
+                    <li><strong>Wikipedia:</strong> Enedina Alves Marques</li>
+                </a>
+                <a href="https://www.gov.br/mast/pt-br/assuntos/noticias/2025/marco/enedina-alves-marques" target="_blank" style="text-decoration: none; color: white;">
+                    <li><strong>Documentário MAST:</strong> "Conexão Memória - Enedina Alves Marques" (2025)</li>
+                </a>
+                <ul><strong>Vídeos:</strong> Pesquisa sobre história de Enedina no YouTube (múltiplas fontes)
+                    <li>
+                        <a href="https://youtu.be/5aq9OIbELxY?si=qlw39C27u47SBa4e" target="_blank" style="text-decoration: none; color: white;">
+                            Vídeo 1
+                        </a>
+                    </li>
+                        <li>
+                        <a href="https://youtu.be/UkQ1cjFfFq0?si=mgT4aaWzW0uDgci3" target="_blank" style="text-decoration: none; color: white;">
+                            Vídeo 2
+                        </a>
+                    </li>
+                        <li>
+                        <a href="https://youtu.be/LbydyZA1Ng8?si=UHWMn5so0HztPm3G" target="_blank" style="text-decoration: none; color: white;">
+                            Vídeo 3
+                        </a>
+                    </li>
+                </ul>
+                <a href="https://abpnrevista.org.br/site/article/view/1032/1002" target="_blank" style="text-decoration: none; color: white;">
+                    <li><strong>Revista:</strong> Artigo da ABPN (Associação Brasileira de Pesquisadores Negros)</li>
+                </a>
+                <a href="https://youtu.be/4PNmrGkiXUE?si=xFfd9ybjGiBKGMBq" target="_blank" style="text-decoration: none; color: white;">
+                    <li><strong>Música:</strong> Racionais MC - reflexão sobre preconceito racial e superação</li>
+                </a>
+            </ul>
+
+            <div style="margin-top: 60px; padding-top: 30px; border-top: 2px solid #00d084; text-align: center;">
+                <p style="font-size: 1.3rem; color: #00d084;"><strong>Período de pesquisa e desenvolvimento:</strong> Dezembro de 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 14: Quiz 
+    <section class="slide slide-14">
+        <div class="content">
+            <h2>Teste seus saberes no quiz</h2>
+           
+
+            <div style="margin-top: 60px; padding-top: 30px; border-top: 2px solid #00d084; text-align: center;">
+                <p style="font-size: 1.3rem; color: #00d084;"><strong>Período de pesquisa e desenvolvimento:</strong> Dezembro de 2025</p>
+                <p style="margin-top: 20px; font-size: 1.1rem;"><strong>Data de apresentação:</strong> 15 de dezembro de 2025</p>
+            </div>
+        </div>
+    </section>
+-->
+    <!-- Navigation -->
+    <div class="slide-counter" id="slideCounter">1 / 10</div>
+    <div class="nav-buttons">
+        <button onclick="previousSlide()">← Anterior</button>
+        <button onclick="nextSlide()">Próximo →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.style.display = 'none');
+            slides[n].style.display = 'flex';
+            document.getElementById('slideCounter').textContent = `${n + 1} / ${totalSlides}`;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Navegação por teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+        });
+
+        // Mostrar primeiro slide
+        showSlide(0);
+    </script>
+
+</body>
+</html>
